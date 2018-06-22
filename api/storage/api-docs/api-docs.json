@@ -1,0 +1,64 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Documenta\u00e7\u00e3o para a api do aplicativo de reserva de quartos",
+        "description": "Descri\u00e7\u00e3o...",
+        "termsOfService": "",
+        "contact": {
+            "email": "thiago.pablicio@nutes.uepb.edu.br"
+        },
+        "version": "1.0.0"
+    },
+    "host": "localhost:8000/api",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/acomodacoes": {
+            "get": {
+                "tags": [
+                    "Acomoda\u00e7\u00f5es"
+                ],
+                "summary": "Lista todas as acomoda\u00e7\u00f5es",
+                "operationId": "getAllAcomodacoes",
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    },
+                    "405": {
+                        "description": "N\u00e3o autorizado"
+                    }
+                }
+            }
+        },
+        "/acomodacoes/{id}": {
+            "get": {
+                "tags": [
+                    "Acomoda\u00e7\u00f5es"
+                ],
+                "summary": "Mostra uma acomoda\u00e7\u00e3o",
+                "operationId": "getAcomodacao",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Mostra uma acomoda\u00e7\u00e3o.",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    },
+                    "405": {
+                        "description": "N\u00e3o autorizado"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

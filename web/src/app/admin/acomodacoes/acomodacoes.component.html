@@ -1,0 +1,55 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Acomodações
+      <small>Visualização</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <!-- ./col -->
+        <div class="small-box bg-red col-12 col-sm-4 col-md-4" style="margin: 29px" *ngFor="let acomodacao of acomodacoes">
+          <div class="inner">
+            <h3>{{ acomodacao.id }}</h3>
+            <p>{{ acomodacao.nome }}</p>
+            <p>Quantidade de quartos: {{ acomodacao.qtd_quartos }}</p>
+            <p>Quantidade de banheiros: {{ acomodacao.qtd_banheiros }}</p>
+            <p>Quantidade de camas: {{ acomodacao.qtd_camas }}</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-pie-graph"></i>
+          </div>
+          <a href="#" class="small-box-footer">{{ acomodacao.descricao }} <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+
+
+      <!-- ./col -->
+    </div>
+
+
+    <app-paginate2 page="{{page}}" pageCount="{{ total / per_page}}"
+                       previousText="Front" nextText="Back"
+                       (pageChanged)="gatherPage($event)">
+    </app-paginate2>
+
+
+    <!--<paginate-->
+
+      <!--[qtdPorPagina]="this.per_page"-->
+      <!--[totalRegistros]="this.total"-->
+      <!--[qtdAdjacentes]="2"-->
+      <!--(onPaginate)="paginar($event)">-->
+    <!--</paginate>-->
+    <!-- /.row -->
+
+  </section>
+  <!-- /.content -->
+</div>
